@@ -25,13 +25,13 @@ Se crea una propiedad pública para que se pueda modificar desde el inspector de
 ### Script 2
 Se crean los objetos y sus respectivos materiales y los arrastramos a la propiedad pública del script (una lista de GameObjects). Luego, en *Start* se recorren los objetos de la lista y se imprime su nombre.
 ### Script 3
-Se crean las dos propiedades públicas *Vector3* y le asignamos valores en el inspector a cada componente. Luego, utilizando los métodos de la clase Vector3 imprimimos los datos pedidos.
+Se crean las dos propiedades públicas *Vector3* y le asignamos valores en el inspector a cada componente. Luego, utilizando los métodos de la clase Vector3 imprimimos los datos pedidos y se asignan a los atributos públicos para que sean visibles en el inspector.
 ### Script 4
 Se crea el script asociado a la esfera y sacamos su componente *Transform* con *GetComponent<Transform>()* e imprimimos su propiedad *position*.
 ### Script 5
 Primero en el *Start* recuperamos el cubo y el cilindro con *GameObject.Find* y luego mediante *Vector3.Distance* calculamos la distancia entre el *transform.position* del cubo y ambos objetos.
 ### Script 6
-Se crean tres listas públicas de dos elementos donde se deben arrastrar en primera posición el elemento a mover y en segunda el vector de movimiento. Posteriormente, se crea la misma estructura pero almacenando los *transform* de los objetos. En el *Update*, mediante *Input.GetKeyDown(KeyCode.Space)* se mueve el objeto en la dirección especificada usando *Translate*.
+Establecemos un *Vector3* público que representa el desplazamiento y en el *Update* comprobamos si el eje asociado a la tecla *Space* está pulsado y si es así, movemos el objeto en la dirección del vector de desplazamiento.
 **Importante:** Se mueven en el eje local del objeto, no en el global.
 ### Script 7
 En el *Start* recuperamos tanto el cubo como el cilindro mediante *GameObject.Find* y en el *Update* comprobamos si la tecla *C* o *UpArrow* está pulsada y si es así, cambiamos el color del material del cubo o del cilindro respectivamente mediante una función que recibe una referencia al objeto y le cambia el color a uno aleatorio usando *Random.ColorHSV* con valores fijos para la saturación y el brillo.
